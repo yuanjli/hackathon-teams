@@ -25,4 +25,27 @@ router.get('/:name', function(req, res) {
   res.render('teams/show', { team: team });
 });
 
+// Implement PUT and DELETE routes in the controller;
+// ====================================================
+app.get('/edit/:name', function(req, res){
+    var team = parseInt(req.params.name);
+    res.send(req.params.name);  // this checks the req.params.index is sending.    
+});
+
+app.put("/:name", function(req, res){
+    var name = parseInt(req.params.name);
+    console.log(req.body);
+  
+});
+
+// The Delete function and works for the delete button;
+app.delete('/:name', function(req, res){
+    var name = parseInt(req.params.name);
+    console.log(req.params.name);
+    
+});
+
+// ======================================================
+
+
 module.exports = router;
